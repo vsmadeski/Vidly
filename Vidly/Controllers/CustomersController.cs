@@ -23,7 +23,7 @@ namespace Vidly.Controllers
             _context.Dispose();
         }
 
-        // GET: Customers
+        #region Actions
         public ActionResult Index()
         {
             var customers = _context.Customers.Include(c => c.MembershipType).ToList();
@@ -86,5 +86,6 @@ namespace Vidly.Controllers
 
             return View("CustomerForm", viewModel);
         }
+        #endregion
     }
 }
